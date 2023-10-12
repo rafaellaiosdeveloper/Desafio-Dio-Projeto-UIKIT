@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OMh-KT-lCw">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lista de Tarefas-->
+        <scene sceneID="rcy-Up-6FU">
+            <objects>
+                <tableViewController id="WkU-Ha-sDB" customClass="ToDoListTableViewController" customModule="ListadeTarefas" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="jQj-1Q-MP7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celula" id="KjJ-hk-fE5">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KjJ-hk-fE5" id="Cm0-Wt-cU7">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WkU-Ha-sDB" id="zEW-2W-X0i"/>
+                            <outlet property="delegate" destination="WkU-Ha-sDB" id="IW5-9g-bGv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Lista de Tarefas" id="tn1-ri-Eg4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WxW-D0-Xtm">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="rWc-SG-cv0" kind="show" id="Edq-8Z-DM3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="ptv-69-SYa" kind="show" identifier="segue" id="MEC-Jr-DHI"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ELj-Ik-QeM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="344" y="-52"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="HAj-4I-a12">
+            <objects>
+                <viewController id="rWc-SG-cv0" customClass="RegisterViewController" customModule="ListadeTarefas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o0y-dw-5m3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adicionar Nova Tarefa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kw8-3N-2Yx">
+                                <rect key="frame" x="16" y="115" width="361" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nova Tarefa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8gc-KT-6Pc">
+                                <rect key="frame" x="16" y="148" width="361" height="34"/>
+                                <color key="backgroundColor" red="0.91643383775543152" green="0.92550744010944563" blue="0.92550744010944563" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oef-iW-vLZ">
+                                <rect key="frame" x="50" y="262" width="293" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Adicionar"/>
+                                <connections>
+                                    <action selector="addBottom:" destination="rWc-SG-cv0" eventType="touchUpInside" id="Z5y-XA-j3f"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="obm-GR-NAs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8gc-KT-6Pc" firstAttribute="top" secondItem="Kw8-3N-2Yx" secondAttribute="bottom" constant="12" id="01X-G3-mex"/>
+                            <constraint firstItem="obm-GR-NAs" firstAttribute="trailing" secondItem="8gc-KT-6Pc" secondAttribute="trailing" constant="16" id="5Xk-ev-caB"/>
+                            <constraint firstItem="obm-GR-NAs" firstAttribute="trailing" secondItem="oef-iW-vLZ" secondAttribute="trailing" constant="50" id="DFR-Pl-jvd"/>
+                            <constraint firstItem="Kw8-3N-2Yx" firstAttribute="top" secondItem="obm-GR-NAs" secondAttribute="top" constant="12" id="GLh-6G-hNE"/>
+                            <constraint firstItem="obm-GR-NAs" firstAttribute="trailing" secondItem="Kw8-3N-2Yx" secondAttribute="trailing" constant="16" id="RHn-Hu-84y"/>
+                            <constraint firstItem="oef-iW-vLZ" firstAttribute="leading" secondItem="obm-GR-NAs" secondAttribute="leading" constant="50" id="c4z-xV-7AR"/>
+                            <constraint firstItem="Kw8-3N-2Yx" firstAttribute="leading" secondItem="obm-GR-NAs" secondAttribute="leading" constant="16" id="q2T-Aq-o9F"/>
+                            <constraint firstItem="8gc-KT-6Pc" firstAttribute="leading" secondItem="obm-GR-NAs" secondAttribute="leading" constant="16" id="wLI-qB-uny"/>
+                            <constraint firstItem="oef-iW-vLZ" firstAttribute="top" secondItem="8gc-KT-6Pc" secondAttribute="bottom" constant="80" id="xQC-Zp-LTe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gCD-ab-9dM"/>
+                    <connections>
+                        <outlet property="taskTextField" destination="8gc-KT-6Pc" id="cLo-ff-nlK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVQ-nm-fNj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1094" y="-351"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="Yta-W2-SG0">
+            <objects>
+                <viewController id="ptv-69-SYa" customClass="DetailsViewController" customModule="ListadeTarefas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dhJ-WP-STp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detalhes da Tarefa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCP-TG-ZaU">
+                                <rect key="frame" x="16" y="115" width="361" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Z4Q-l4-95N">
+                                <rect key="frame" x="16" y="148" width="361" height="436"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKN-ds-AJv">
+                                <rect key="frame" x="50" y="596" width="293" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Salvar"/>
+                                <connections>
+                                    <action selector="saveButtom:" destination="ptv-69-SYa" eventType="touchUpInside" id="0TS-xy-G1o"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="D1f-sk-ta5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D1f-sk-ta5" firstAttribute="trailing" secondItem="Z4Q-l4-95N" secondAttribute="trailing" constant="16" id="0JN-YG-lfi"/>
+                            <constraint firstItem="JKN-ds-AJv" firstAttribute="top" secondItem="Z4Q-l4-95N" secondAttribute="bottom" constant="12" id="ERX-AZ-Ehf"/>
+                            <constraint firstItem="Z4Q-l4-95N" firstAttribute="leading" secondItem="D1f-sk-ta5" secondAttribute="leading" constant="16" id="MvW-Fj-ca6"/>
+                            <constraint firstItem="D1f-sk-ta5" firstAttribute="trailing" secondItem="pCP-TG-ZaU" secondAttribute="trailing" constant="16" id="Pon-6K-gHp"/>
+                            <constraint firstItem="pCP-TG-ZaU" firstAttribute="top" secondItem="D1f-sk-ta5" secondAttribute="top" constant="12" id="fie-YZ-HMg"/>
+                            <constraint firstItem="D1f-sk-ta5" firstAttribute="bottom" secondItem="JKN-ds-AJv" secondAttribute="bottom" constant="187" id="pVq-Pc-0Jq"/>
+                            <constraint firstItem="pCP-TG-ZaU" firstAttribute="leading" secondItem="D1f-sk-ta5" secondAttribute="leading" constant="16" id="wIf-Y9-NJA"/>
+                            <constraint firstItem="D1f-sk-ta5" firstAttribute="trailing" secondItem="JKN-ds-AJv" secondAttribute="trailing" constant="50" id="yLn-oi-y5C"/>
+                            <constraint firstItem="Z4Q-l4-95N" firstAttribute="top" secondItem="pCP-TG-ZaU" secondAttribute="bottom" constant="12" id="zDa-jH-Xnd"/>
+                            <constraint firstItem="JKN-ds-AJv" firstAttribute="leading" secondItem="D1f-sk-ta5" secondAttribute="leading" constant="50" id="zGf-J4-ipH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pj1-7Y-A5D">
+                        <barButtonItem key="backBarButtonItem" title="Lista de Tarefas" id="BDp-Dz-vTe"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="Z4Q-l4-95N" id="qSR-F6-nmb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7q4-1H-x2K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1093.8931297709923" y="325.35211267605638"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4da-6F-aN1">
+            <objects>
+                <navigationController id="OMh-KT-lCw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W5A-3D-CnH">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemOrangeColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="WkU-Ha-sDB" kind="relationship" relationship="rootViewController" id="KdU-Y5-STs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hvg-PX-dPx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-364" y="-52"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
